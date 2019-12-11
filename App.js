@@ -27,9 +27,9 @@ import './shim';
 import * as bitcoinWallet from './btc-wallet.helper';
 
 const App: () => React$Node = () => {
-  const {createBitcoinWallet} = bitcoinWallet;
+  const {createBitcoinWallet, mnemnicGen} = bitcoinWallet;
   createBitcoinWallet();
-
+  mnemnicGen();
   return (
     <>
       <StatusBar barStyle="dark-content" />
