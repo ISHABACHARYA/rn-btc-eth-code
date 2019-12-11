@@ -34,4 +34,5 @@ export function createBitcoinWallet() {
 export function mnemnicGen() {
   const mnemonics = HDNode.entropyToMnemonic(utils.randomBytes(16));
   console.log('mnemnics generated ', mnemonics);
+  return mnemonics;
 }

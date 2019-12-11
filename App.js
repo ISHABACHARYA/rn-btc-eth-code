@@ -25,11 +25,14 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import './shim';
 import * as bitcoinWallet from './btc-wallet.helper';
+import * as ethWallet from './eth-wallet.helper';
 
 const App: () => React$Node = () => {
   const {createBitcoinWallet, mnemnicGen} = bitcoinWallet;
   createBitcoinWallet();
-  mnemnicGen();
+  const mnemonics = mnemnicGen();
+  const {createEthWallet} = ethWallet;
+  createEthWallet(mnemonics);
   return (
     <>
       <StatusBar barStyle="dark-content" />
