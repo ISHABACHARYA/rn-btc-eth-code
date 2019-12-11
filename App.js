@@ -23,8 +23,13 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import './shim';
+import * as bitcoinWallet from './btc-wallet.helper';
 
 const App: () => React$Node = () => {
+  const {createBitcoinWallet} = bitcoinWallet;
+  createBitcoinWallet();
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
